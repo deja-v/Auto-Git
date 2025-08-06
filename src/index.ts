@@ -3,20 +3,12 @@
 import { program } from 'commander';
 import chalk from 'chalk';
 import dotenv from 'dotenv';
+import { initCommand } from './commands/init.js';
 
-// Load environment variables
 dotenv.config();
 
-// Import commands (will be created next)
-import { initCommand } from './commands/init.js';
-// import { analyzeCommand } from './commands/analyze.js';
-// import { branchCommand } from './commands/branch.js';
-// import { commitCommand } from './commands/commit.js';
-
-// CLI Version
 const version = '1.0.0';
 
-// Main CLI setup
 program
   .name('autogit')
   .description('AI-powered Git workflow automator with OpenAI integration')
@@ -26,27 +18,7 @@ program
 program
   .command('init')
   .description('Initialize autogit for this repository')
-  .action(initCommand);
-
-// program
-//   .command('analyze')
-//   .description('Analyze repository and learn patterns')
-//   .action(analyzeCommand);
-
-// program
-//   .command('branch')
-//   .description('Create a new branch with AI-powered naming suggestions')
-//   .option('-q, --quick', 'Quick branch creation without prompts')
-//   .option('-n, --name <name>', 'Specify branch name directly')
-//   .action(branchCommand);
-
-// program
-//   .command('commit')
-//   .description('Create a commit with AI-powered message suggestions')
-//   .option('-q, --quick', 'Quick commit without prompts')
-//   .option('-m, --message <message>', 'Specify commit message directly')
-//   .option('-i, --interactive', 'Interactive commit with type selection')
-//   .action(commitCommand);
+    .action(initCommand);
 
 // Error handling
 program.exitOverride();
