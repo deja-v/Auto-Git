@@ -2,7 +2,7 @@ import { Config } from '../types/index.js';
 
 let config: Config | null = null;
 
-export async function loadConfig(): Promise<Config> {
+export async function loadConfig() {
   if (config) {
     return config;
   }
@@ -34,7 +34,7 @@ export async function loadConfig(): Promise<Config> {
   return config;
 }
 
-export async function validateConfig(): Promise<{ isValid: boolean; errors: string[] }> {
+export async function validateConfig() {
   const config = await loadConfig();
   const errors: string[] = [];
 

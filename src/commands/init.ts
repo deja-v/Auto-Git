@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import ora from 'ora';
 import { loadConfig, validateConfig } from '../services/config.js';
 
-export async function initCommand(): Promise<void> {
+export async function initCommand(){
   const spinner = ora('Initializing autogit...').start();
 
   try {
